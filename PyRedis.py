@@ -58,7 +58,7 @@ def PUT_key(Key):
     windows = request.json['windows']
     data = {"brand":brand,  "color":color, "size":size}
 
-    db.hmset(data)
+    db.hmset(Key,data)
     return jsonify(data)
 
 
