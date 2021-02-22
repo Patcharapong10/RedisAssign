@@ -56,7 +56,7 @@ def PUT_key(Key):
     color = request.json['color']
     size = request.json['size']
     windows = request.json['windows']
-    data = {"brand":brand,  "color":color, "size":size}
+    data = {"brand":brand,  "color":color, "size":size, "windows":windows}
 
     db.hmset(Key,data)
     return jsonify(data)
