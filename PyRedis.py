@@ -56,9 +56,9 @@ def PUT_key(Key):
     color = request.json['color']
     size = request.json['size']
     windows = request.json['windows']
-    data = {"Key":Key, "brand":brand,  "color":color, "size":size}
+    data = {"brand":brand,  "color":color, "size":size}
 
-    db.hmset(Key,data)
+    db.hmset(data)
     return jsonify(data)
 
 
@@ -70,4 +70,4 @@ def PUT_key(Key):
 #   return 'Name updated.'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=80)
