@@ -30,13 +30,13 @@ def get_key(Key):
     return jsonify(result)
 
 # DELETE Key
-@app.route('/Refrig/<Key>',methods=['DELETE'])
+@app.route('/<Key>',methods=['DELETE'])
 def DELETE_key(Key):
     result = db.delete(Key)
     return jsonify(result)
 
  # Post Key
-@app.route('/Refrig/',methods=['POST'])
+@app.route('/',methods=['POST'])
 def Post_key():
     brand = request.json['brand']
     color = request.json['color']
@@ -49,7 +49,7 @@ def Post_key():
     return jsonify(data)
 
 # update Key
-@app.route('/Refrig/<Key>',methods=['PUT'])
+@app.route('/<Key>',methods=['PUT'])
 def PUT_key(Key):
 
     brand = request.json['brand']
